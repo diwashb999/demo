@@ -6,12 +6,26 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { CommandSearchPopup } from "./command-search-popup"
 import { VideoPopup } from "./video-popup"
-import { Search, CheckCircle, Play, Star, Users, Clock, Sparkles, ArrowRight, Stethoscope, Heart } from "lucide-react"
+import {
+  Search,
+  CheckCircle,
+  Play,
+  Star,
+  Users,
+  Clock,
+  Sparkles,
+  ArrowRight,
+  Stethoscope,
+  Heart,
+  UserCheck,
+  Activity,
+} from "lucide-react"
 import Image from "next/image"
 
 export function HeroSection() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [videoOpen, setVideoOpen] = useState(false)
+  const [activePortal, setActivePortal] = useState<"patient" | "doctor">("patient")
 
   const stats = [
     { icon: Users, value: "50K+", label: "Doctors", color: "text-blue-600" },
@@ -24,6 +38,10 @@ export function HeroSection() {
 
   const handleFindDoctors = () => {
     window.open("https://patient.upchaarnepal.com/find/doctors", "_blank")
+  }
+
+  const handleDoctorPortal = () => {
+    window.open("https://doctor.upchaarnepal.com", "_blank")
   }
 
   return (
@@ -132,32 +150,84 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Content - Hero Image */}
+          {/* Right Content - Portal Showcase */}
           <div className="relative">
-            {/* Floating Cards */}
+            {/* Portal Toggle */}
+            <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-20">
+              <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg border border-gray-200">
+                <div className="flex items-center space-x-2">
+                  <Button
+                    size="sm"
+                    variant={activePortal === "patient" ? "default" : "ghost"}
+                    className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                      activePortal === "patient"
+                        ? "bg-blue-600 text-white shadow-md"
+                        : "text-gray-600 hover:text-blue-600"
+                    }`}
+                    onClick={() => setActivePortal("patient")}
+                  >
+                    <UserCheck className="h-4 w-4 mr-2" />
+                    Patient Portal
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant={activePortal === "doctor" ? "default" : "ghost"}
+                    className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                      activePortal === "doctor"
+                        ? "bg-green-600 text-white shadow-md"
+                        : "text-gray-600 hover:text-green-600"
+                    }`}
+                    onClick={() => setActivePortal("doctor")}
+                  >
+                    <Stethoscope className="h-4 w-4 mr-2" />
+                    Doctor Portal
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Status Cards */}
+            {/* Health Report Ready - moved to left side */}
             <div className="absolute -top-4 -left-4 z-10">
               <Card className="p-4 bg-white/90 backdrop-blur-sm shadow-xl border-0">
                 <div className="flex items-center space-x-3">
-                  <div className="bg-green-100 rounded-full p-2">
-                    <CheckCircle className="h-5 w-5 text-green-600" />
+                  <div className={`rounded-full p-2 ${activePortal === "patient" ? "bg-blue-100" : "bg-green-100"}`}>
+                    {activePortal === "patient" ? (
+                      <Stethoscope className="h-5 w-5 text-blue-600" />
+                    ) : (
+                      <Users className="h-5 w-5 text-green-600" />
+                    )}
                   </div>
                   <div>
-                    <p className="font-semibold text-sm">Appointment Confirmed</p>
-                    <p className="text-xs text-gray-600">Dr. Sharma - 2:00 PM</p>
+                    <p className="font-semibold text-sm">
+                      {activePortal === "patient" ? "Health Report Ready" : "New Patient Added"}
+                    </p>
+                    <p className="text-xs text-gray-600">
+                      {activePortal === "patient" ? "View your results" : "Diwash Bhattarai"}
+                    </p>
                   </div>
                 </div>
               </Card>
             </div>
 
+            {/* Appointment Confirmed - moved to right side */}
             <div className="absolute -bottom-4 -right-4 z-10">
               <Card className="p-4 bg-white/90 backdrop-blur-sm shadow-xl border-0">
                 <div className="flex items-center space-x-3">
-                  <div className="bg-blue-100 rounded-full p-2">
-                    <Stethoscope className="h-5 w-5 text-blue-600" />
+                  <div className={`rounded-full p-2 ${activePortal === "patient" ? "bg-green-100" : "bg-blue-100"}`}>
+                    {activePortal === "patient" ? (
+                      <CheckCircle className="h-5 w-5 text-green-600" />
+                    ) : (
+                      <Activity className="h-5 w-5 text-blue-600" />
+                    )}
                   </div>
                   <div>
-                    <p className="font-semibold text-sm">Health Report Ready</p>
-                    <p className="text-xs text-gray-600">View your results</p>
+                    <p className="font-semibold text-sm">
+                      {activePortal === "patient" ? "Appointment Confirmed" : "Patient Consultation"}
+                    </p>
+                    <p className="text-xs text-gray-600">
+                      {activePortal === "patient" ? "Dr. Sharma - 2:00 PM" : "Video Call - 2:00 PM"}
+                    </p>
                   </div>
                 </div>
               </Card>
@@ -173,27 +243,72 @@ export function HeroSection() {
                   </div>
                   <span className="text-xs font-medium">4.9/5</span>
                 </div>
-                <p className="text-xs text-gray-600 mt-1">1000+ Reviews</p>
+                <p className="text-xs text-gray-600 mt-1">
+                  {activePortal === "patient" ? "1000+ Reviews" : "500+ Doctors"}
+                </p>
               </Card>
             </div>
 
-            {/* Main Image */}
+            {/* Main Portal Interface */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-3xl transform rotate-3" />
-              <div className="relative bg-white rounded-3xl shadow-2xl p-6 transform -rotate-1">
-                <Image
-                  src="/placeholder.svg?height=500&width=600"
-                  alt="Healthcare professionals in Nepal"
-                  width={600}
-                  height={500}
-                  className="rounded-2xl w-full h-auto"
-                />
+              <div
+                className={`absolute inset-0 rounded-3xl transform rotate-3 transition-all duration-500 ${
+                  activePortal === "patient"
+                    ? "bg-gradient-to-br from-blue-400/20 to-indigo-400/20"
+                    : "bg-gradient-to-br from-green-400/20 to-emerald-400/20"
+                }`}
+              />
+              <div className="relative bg-white rounded-3xl shadow-2xl p-6 transform -rotate-1 transition-all duration-500">
+                <div className="relative overflow-hidden rounded-2xl">
+                  <Image
+                    src={activePortal === "patient" ? "/images/patient-portal.png" : "/images/doctor-portal.png"}
+                    alt={`${activePortal === "patient" ? "Patient" : "Doctor"} Portal Interface`}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto transition-all duration-500"
+                  />
+
+                  {/* Portal Action Button Overlay */}
+                  <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                    <Button
+                      size="lg"
+                      className={`${
+                        activePortal === "patient" ? "bg-blue-600 hover:bg-blue-700" : "bg-green-600 hover:bg-green-700"
+                      } text-white shadow-xl`}
+                      onClick={activePortal === "patient" ? handleFindDoctors : handleDoctorPortal}
+                    >
+                      {activePortal === "patient" ? (
+                        <>
+                          <UserCheck className="h-5 w-5 mr-2" />
+                          Try Patient Portal
+                        </>
+                      ) : (
+                        <>
+                          <Stethoscope className="h-5 w-5 mr-2" />
+                          Try Doctor Portal
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-20 animate-pulse" />
-            <div className="absolute bottom-20 left-10 w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-20 animate-pulse delay-1000" />
+            <div
+              className={`absolute top-10 right-10 w-20 h-20 rounded-full opacity-20 animate-pulse transition-all duration-500 ${
+                activePortal === "patient"
+                  ? "bg-gradient-to-br from-blue-400 to-indigo-500"
+                  : "bg-gradient-to-br from-green-400 to-emerald-500"
+              }`}
+            />
+            <div
+              className={`absolute bottom-20 left-10 w-16 h-16 rounded-full opacity-20 animate-pulse delay-1000 transition-all duration-500 ${
+                activePortal === "patient"
+                  ? "bg-gradient-to-br from-purple-400 to-pink-500"
+                  : "bg-gradient-to-br from-teal-400 to-cyan-500"
+              }`}
+            />
           </div>
         </div>
       </div>
