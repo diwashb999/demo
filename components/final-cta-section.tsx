@@ -5,7 +5,7 @@ import { Play, ArrowRight } from "lucide-react"
 
 export function FinalCtaSection() {
   return (
-    <section className="py-16 md:py-20 bg-blue-50">
+    <section className="py-16 md:py-20 bg-green-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Start Your Healthcare Journey Today</h2>
         <p className="text-lg md:text-xl mb-6 md:mb-8 text-gray-600 max-w-2xl mx-auto">
@@ -15,7 +15,7 @@ export function FinalCtaSection() {
           <Button
             size="lg"
             onClick={() => window.open("https://patient.upchaarnepal.com/signup", "_blank")}
-            className="bg-blue-600 hover:bg-blue-700 text-white"
+            className="bg-[#059669] hover:bg-green-700 text-white"
           >
             <Play className="h-6 w-6 mr-3" />
             Get Started Free
@@ -23,7 +23,7 @@ export function FinalCtaSection() {
           <Button
             size="lg"
             variant="outline"
-            className="bg-transparent border-blue-600 text-blue-600 hover:bg-blue-100"
+            className="bg-transparent border-[#059669] text-[#059669] hover:bg-green-100"
             onClick={() => window.open("/about", "_blank")}
           >
             <ArrowRight className="h-6 w-6 mr-3" />

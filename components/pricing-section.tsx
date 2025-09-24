@@ -177,10 +177,10 @@ export function PricingSection() {
   const currentPlans = pricingPlans[activeTab as keyof typeof pricingPlans]
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section className="py-16 md:py-20 bg-gradient-to-br from-green-50 to-emerald-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 border-blue-200 mb-4">Pricing Plans</Badge>
+          <Badge className="bg-green-100 text-[#059669] hover:bg-green-200 border-green-200 mb-4">Pricing Plans</Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Subscription Plans Tailored for Nepal</h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Affordable pricing designed for Nepali healthcare providers. All plans include free setup and training.
@@ -197,7 +197,7 @@ export function PricingSection() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-4 md:px-6 py-2 md:py-3 rounded-xl font-medium transition-all duration-300 text-sm md:text-base whitespace-nowrap ${
                     activeTab === tab.id
-                      ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg"
+                      ? "bg-gradient-to-r from-[#059669] to-green-700 text-white shadow-lg"
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                   }`}
                 >
@@ -215,13 +215,13 @@ export function PricingSection() {
               key={index}
               className={`relative py-8 transition-all duration-300 hover:shadow-2xl flex flex-col h-full ${
                 plan.popular
-                  ? "border-2 border-blue-600 shadow-2xl lg:scale-105 bg-gradient-to-br from-blue-600 to-indigo-700 text-white z-20"
-                  : "px-4 border border-gray-200 hover:border-blue-300 bg-white hover:shadow-xl"
+                  ? "border-2 border-[#059669] shadow-2xl lg:scale-105 bg-gradient-to-br from-[#059669] to-green-700 text-white z-20"
+                  : "px-4 border border-gray-200 hover:border-[#059669] bg-white hover:shadow-xl"
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
-                  <Badge className="bg-white text-blue-600 px-3 md:px-4 py-1 text-xs md:text-sm font-semibold shadow-lg flex items-center space-x-1">
+                  <Badge className="bg-white text-[#059669] px-3 md:px-4 py-1 text-xs md:text-sm font-semibold shadow-lg flex items-center space-x-1">
                     <Star className="h-3 w-3 md:h-4 md:w-4 fill-current" />
                     <span>Most Popular</span>
                   </Badge>
@@ -235,7 +235,7 @@ export function PricingSection() {
                   {plan.name}
                 </CardTitle>
                 <CardDescription
-                  className={`mb-4 md:mb-6 text-sm md:text-base ${plan.popular ? "text-blue-100" : "text-gray-600"}`}
+                  className={`mb-4 md:mb-6 text-sm md:text-base ${plan.popular ? "text-green-100" : "text-gray-600"}`}
                 >
                   {plan.description}
                 </CardDescription>
@@ -246,11 +246,11 @@ export function PricingSection() {
                   >
                     {plan.price}
                   </span>
-                  <span className={`text-sm md:text-base ml-1 ${plan.popular ? "text-blue-100" : "text-gray-600"}`}>
+                  <span className={`text-sm md:text-base ml-1 ${plan.popular ? "text-green-100" : "text-gray-600"}`}>
                     /month
                   </span>
                 </div>
-                <p className={`text-xs md:text-sm ${plan.popular ? "text-blue-100" : "text-gray-500"}`}>
+                <p className={`text-xs md:text-sm ${plan.popular ? "text-green-100" : "text-gray-500"}`}>
                   + 13% VAT as per Nepal Government
                 </p>
               </CardHeader>
@@ -261,7 +261,7 @@ export function PricingSection() {
                     <div key={featureIndex} className="flex items-start space-x-3">
                       <CheckCircle
                         className={`h-4 w-4 md:h-5 md:w-5 flex-shrink-0 mt-0.5 ${
-                          plan.popular ? "text-blue-200" : "text-green-500"
+                          plan.popular ? "text-green-200" : "text-green-500"
                         }`}
                       />
                       <span className={`text-sm md:text-base ${plan.popular ? "text-white" : "text-gray-700"}`}>
@@ -275,8 +275,8 @@ export function PricingSection() {
                   <Button
                     className={`w-full h-10 md:h-12 font-semibold transition-all duration-300 text-sm md:text-base ${
                       plan.popular
-                        ? "bg-white text-blue-600 hover:bg-gray-100 shadow-lg"
-                        : "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg"
+                        ? "bg-white text-[#059669] hover:bg-gray-100 shadow-lg"
+                        : "bg-gradient-to-r from-[#059669] to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-lg"
                     }`}
                     onClick={() => {
                       if (plan.buttonText === "Contact Sales") {
@@ -290,7 +290,7 @@ export function PricingSection() {
                   </Button>
 
                   <p
-                    className={`text-center text-xs md:text-sm mt-3 md:mt-4 ${plan.popular ? "text-blue-100" : "text-gray-500"}`}
+                    className={`text-center text-xs md:text-sm mt-3 md:mt-4 ${plan.popular ? "text-green-100" : "text-gray-500"}`}
                   >
                     No setup fees • Cancel anytime
                   </p>
@@ -306,7 +306,10 @@ export function PricingSection() {
             Need a custom solution? We offer tailored packages for large healthcare organizations.
           </p>
           <Link href="/contact-sales">
-            <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 text-sm md:text-base">
+            <Button
+              variant="outline"
+              className="border-[#059669] text-[#059669] hover:bg-green-50 text-sm md:text-base bg-transparent"
+            >
               Contact Our Sales Team
             </Button>
           </Link>

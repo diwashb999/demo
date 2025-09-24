@@ -6,7 +6,7 @@ export function ServicesSection() {
       icon: Stethoscope,
       title: "General Checkup",
       description: "Regular health checkups and consultations",
-      color: "blue",
+      color: "green",
     },
     {
       icon: Heart,
@@ -18,25 +18,22 @@ export function ServicesSection() {
       icon: Activity,
       title: "Emergency",
       description: "24-hour emergency medical services",
-      color: "purple",
+      color: "green",
     },
     {
       icon: UserCheck,
       title: "Specialist Care",
       description: "Expert doctors from various fields",
-      color: "orange",
+      color: "green",
     },
   ]
 
   const colorClasses = {
-    blue: "from-blue-500 to-blue-600",
-    green: "from-green-500 to-green-600",
-    purple: "from-purple-500 to-purple-600",
-    orange: "from-orange-500 to-orange-600",
+    green: "from-[#059669] to-green-600",
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/50">
+    <section className="py-20 bg-gradient-to-br from-gray-50 via-green-50/30 to-emerald-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {services.map((service, index) => {
@@ -48,7 +45,7 @@ export function ServicesSection() {
                 >
                   <Icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="font-bold text-lg text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="font-bold text-lg text-gray-900 mb-3 group-hover:text-[#059669] transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">{service.description}</p>

@@ -8,7 +8,7 @@ export function FeaturesSection() {
       icon: Search,
       title: "Easy Search",
       description: "Find doctors and healthcare providers near you",
-      color: "blue",
+      color: "green",
     },
     {
       icon: Calendar,
@@ -20,28 +20,25 @@ export function FeaturesSection() {
       icon: Shield,
       title: "Secure Platform",
       description: "Your health data is safe and secure",
-      color: "purple",
+      color: "green",
     },
     {
       icon: Clock,
       title: "24/7 Support",
       description: "Round the clock customer support",
-      color: "orange",
+      color: "green",
     },
   ]
 
   const colorClasses = {
-    blue: "from-blue-500 to-blue-600",
-    green: "from-green-500 to-green-600",
-    purple: "from-purple-500 to-purple-600",
-    orange: "from-orange-500 to-orange-600",
+    green: "from-[#059669] to-green-600",
   }
 
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 border-blue-200 mb-4">Our Features</Badge>
+          <Badge className="bg-green-100 text-[#059669] hover:bg-green-200 border-green-200 mb-4">Our Features</Badge>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Healthcare Made Simple for Everyone</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Making healthcare accessible and convenient in Nepal through modern technology
@@ -62,7 +59,7 @@ export function FeaturesSection() {
                   >
                     <Icon className="h-10 w-10 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#059669] transition-colors">
                     {feature.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>

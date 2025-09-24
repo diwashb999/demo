@@ -28,7 +28,7 @@ export function HeroSection() {
   const [activePortal, setActivePortal] = useState<"patient" | "doctor">("patient")
 
   const stats = [
-    { icon: Users, value: "50K+", label: "Doctors", color: "text-blue-600" },
+    { icon: Users, value: "50K+", label: "Doctors", color: "text-[#059669]" },
     { icon: Heart, value: "1M+", label: "Patients", color: "text-red-500" },
     { icon: Clock, value: "24/7", label: "Support", color: "text-green-600" },
     { icon: Star, value: "4.9", label: "Rating", color: "text-yellow-500" },
@@ -47,10 +47,10 @@ export function HeroSection() {
   return (
     <section className="pt-36 pb-10 relative min-h-screen flex items-center">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-100/20 to-indigo-100/20 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-emerald-50" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-green-200/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-green-100/20 to-emerald-100/20 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -58,7 +58,7 @@ export function HeroSection() {
           <div className="space-y-8">
             {/* Badge */}
             <div className="flex items-center space-x-2">
-              <Badge className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-0 px-4 py-2">
+              <Badge className="bg-gradient-to-r from-[#059669] to-green-700 text-white border-0 px-4 py-2">
                 <Sparkles className="h-4 w-4 mr-2" />
                 Nepal's #1 Healthcare Platform
               </Badge>
@@ -69,7 +69,7 @@ export function HeroSection() {
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
                 <span className="text-gray-900">Your Health,</span>
                 <br />
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent drop-shadow-sm">
+                <span className="bg-gradient-to-r from-[#059669] via-green-600 to-emerald-600 bg-clip-text text-transparent drop-shadow-sm">
                   Our Priority
                 </span>
               </h1>
@@ -82,12 +82,12 @@ export function HeroSection() {
             {/* Search Bar */}
             <div className="space-y-4">
               <Card
-                className="p-6 cursor-pointer hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-400 bg-white/90 backdrop-blur-sm hover:bg-white group"
+                className="p-6 cursor-pointer hover:shadow-xl transition-all duration-300 border-2 hover:border-[#059669] bg-white/90 backdrop-blur-sm hover:bg-white group"
                 onClick={() => setSearchOpen(true)}
               >
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-3 flex-1">
-                    <Search className="h-6 w-6 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                    <Search className="h-6 w-6 text-gray-400 group-hover:text-[#059669] transition-colors" />
                     <span className="text-gray-500 group-hover:text-gray-700 text-lg">
                       Search doctors, hospitals, or services...
                     </span>
@@ -115,7 +115,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 h-16 px-10 text-lg font-semibold"
+                className="bg-gradient-to-r from-[#059669] to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 h-16 px-10 text-lg font-semibold"
                 onClick={handleFindDoctors}
               >
                 <Search className="h-6 w-6 mr-3" />
@@ -125,7 +125,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-gray-300 hover:border-blue-400 hover:bg-blue-50 h-16 px-10 bg-white/90 backdrop-blur-sm text-lg font-semibold"
+                className="border-2 border-gray-300 hover:border-[#059669] hover:bg-green-50 h-16 px-10 bg-white/90 backdrop-blur-sm text-lg font-semibold"
                 onClick={() => setVideoOpen(true)}
               >
                 <Play className="h-6 w-6 mr-3" />
@@ -161,8 +161,8 @@ export function HeroSection() {
                     variant={activePortal === "patient" ? "default" : "ghost"}
                     className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
                       activePortal === "patient"
-                        ? "bg-blue-600 text-white shadow-md"
-                        : "text-gray-600 hover:text-blue-600"
+                        ? "bg-[#059669] text-white shadow-md"
+                        : "text-gray-600 hover:text-[#059669]"
                     }`}
                     onClick={() => setActivePortal("patient")}
                   >
@@ -191,9 +191,9 @@ export function HeroSection() {
             <div className="absolute -top-4 -left-4 z-10">
               <Card className="p-4 bg-white/90 backdrop-blur-sm shadow-xl border-0">
                 <div className="flex items-center space-x-3">
-                  <div className={`rounded-full p-2 ${activePortal === "patient" ? "bg-blue-100" : "bg-green-100"}`}>
+                  <div className={`rounded-full p-2 ${activePortal === "patient" ? "bg-green-100" : "bg-green-100"}`}>
                     {activePortal === "patient" ? (
-                      <Stethoscope className="h-5 w-5 text-blue-600" />
+                      <Stethoscope className="h-5 w-5 text-[#059669]" />
                     ) : (
                       <Users className="h-5 w-5 text-green-600" />
                     )}
@@ -214,11 +214,11 @@ export function HeroSection() {
             <div className="absolute -bottom-4 -right-4 z-10">
               <Card className="p-4 bg-white/90 backdrop-blur-sm shadow-xl border-0">
                 <div className="flex items-center space-x-3">
-                  <div className={`rounded-full p-2 ${activePortal === "patient" ? "bg-green-100" : "bg-blue-100"}`}>
+                  <div className={`rounded-full p-2 ${activePortal === "patient" ? "bg-green-100" : "bg-green-100"}`}>
                     {activePortal === "patient" ? (
                       <CheckCircle className="h-5 w-5 text-green-600" />
                     ) : (
-                      <Activity className="h-5 w-5 text-blue-600" />
+                      <Activity className="h-5 w-5 text-[#059669]" />
                     )}
                   </div>
                   <div>
@@ -254,7 +254,7 @@ export function HeroSection() {
               <div
                 className={`absolute inset-0 rounded-3xl transform rotate-3 transition-all duration-500 ${
                   activePortal === "patient"
-                    ? "bg-gradient-to-br from-blue-400/20 to-indigo-400/20"
+                    ? "bg-gradient-to-br from-green-400/20 to-emerald-400/20"
                     : "bg-gradient-to-br from-green-400/20 to-emerald-400/20"
                 }`}
               />
@@ -273,7 +273,9 @@ export function HeroSection() {
                     <Button
                       size="lg"
                       className={`${
-                        activePortal === "patient" ? "bg-blue-600 hover:bg-blue-700" : "bg-green-600 hover:bg-green-700"
+                        activePortal === "patient"
+                          ? "bg-[#059669] hover:bg-green-700"
+                          : "bg-green-600 hover:bg-green-700"
                       } text-white shadow-xl`}
                       onClick={activePortal === "patient" ? handleFindDoctors : handleDoctorPortal}
                     >
@@ -298,14 +300,14 @@ export function HeroSection() {
             <div
               className={`absolute top-10 right-10 w-20 h-20 rounded-full opacity-20 animate-pulse transition-all duration-500 ${
                 activePortal === "patient"
-                  ? "bg-gradient-to-br from-blue-400 to-indigo-500"
+                  ? "bg-gradient-to-br from-[#059669] to-green-600"
                   : "bg-gradient-to-br from-green-400 to-emerald-500"
               }`}
             />
             <div
               className={`absolute bottom-20 left-10 w-16 h-16 rounded-full opacity-20 animate-pulse delay-1000 transition-all duration-500 ${
                 activePortal === "patient"
-                  ? "bg-gradient-to-br from-purple-400 to-pink-500"
+                  ? "bg-gradient-to-br from-green-400 to-emerald-500"
                   : "bg-gradient-to-br from-teal-400 to-cyan-500"
               }`}
             />

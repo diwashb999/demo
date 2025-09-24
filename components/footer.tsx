@@ -5,13 +5,13 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-blue-50 p-2 md:p-4 text-white">
+    <footer className="bg-green-50 p-2 md:p-4 text-white">
       <div className="bg-gray-900 rounded-2xl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#059669] to-green-700">
                   <Stethoscope className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-xl font-bold">UpchaarNepal</span>
@@ -20,13 +20,13 @@ export function Footer() {
                 Digitizing healthcare in Nepal, making it accessible and convenient for everyone.
               </p>
               <div className="flex space-x-4">
-                <div className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
+                <div className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#059669] transition-colors cursor-pointer">
                   <span className="text-sm font-bold">f</span>
                 </div>
-                <div className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
+                <div className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#059669] transition-colors cursor-pointer">
                   <span className="text-sm font-bold">t</span>
                 </div>
-                <div className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
+                <div className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#059669] transition-colors cursor-pointer">
                   <span className="text-sm font-bold">in</span>
                 </div>
               </div>
@@ -122,7 +122,7 @@ export function Footer() {
                     placeholder="Enter your email"
                     className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 text-sm"
                   />
-                  <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-sm whitespace-nowrap">
+                  <Button className="bg-gradient-to-r from-[#059669] to-green-700 hover:from-green-700 hover:to-green-800 text-sm whitespace-nowrap">
                     Subscribe
                   </Button>
                 </div>
