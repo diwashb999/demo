@@ -33,31 +33,38 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Services</h3>
+              <h3 className="font-semibold mb-4">Portals</h3>
               <ul className="space-y-2 text-gray-400 text-sm md:text-base">
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Find Doctors
+                  <a
+                    href="https://patient.upchaarnepal.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Patient Portal
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://doctor.upchaarnepal.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Clinic Portal
+                  </a>
+                </li>
+                <li>
+                  <Link href="/coming-soon" className="hover:text-white transition-colors flex items-center gap-2">
+                    Diagnostic Portal
+                    <span className="text-xs bg-yellow-600 text-white px-2 py-0.5 rounded-full">Coming Soon</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Book Appointments
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Home Service
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Emergency Care
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Telemedicine
+                  <Link href="/coming-soon" className="hover:text-white transition-colors flex items-center gap-2">
+                    Pharmacy Portal
+                    <span className="text-xs bg-yellow-600 text-white px-2 py-0.5 rounded-full">Coming Soon</span>
                   </Link>
                 </li>
               </ul>
@@ -132,7 +139,7 @@ export function Footer() {
 
           <div className="border-t border-gray-800 mt-8 md:mt-12 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-center md:text-left text-sm">
-              &copy; 2024 UpchaarNepal. All rights reserved.
+              &copy; 2025 UpchaarNepal. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
               <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors text-sm">

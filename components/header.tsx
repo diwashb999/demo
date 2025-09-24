@@ -43,6 +43,18 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection("how-it-works")}
+              className="text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors"
+            >
+              How It Works
+            </button>
             <a
               href="https://patient.upchaarnepal.com/find/doctors"
               target="_blank"
@@ -51,23 +63,17 @@ export function Header() {
             >
               Find Doctors
             </a>
+            <button
+              onClick={() => scrollToSection("technology")}
+              className="text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors"
+            >
+              Technology
+            </button>
             <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors">
               About
             </Link>
             <Link href="/careers" className="text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors">
               Careers
-            </Link>
-            <Link
-              href="/news-media"
-              className="text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors"
-            >
-              News & Media
-            </Link>
-            <Link
-              href="/contact-sales"
-              className="text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors"
-            >
-              Contact Sales
             </Link>
             <button
               onClick={() => scrollToSection("contact")}
@@ -104,6 +110,18 @@ export function Header() {
         {isMobileMenuOpen && (
           <div className="lg:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-lg">
             <nav className="container mx-auto px-4 py-4 space-y-4">
+              <button
+                onClick={() => scrollToSection("services")}
+                className="block w-full text-left text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors py-2"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => scrollToSection("how-it-works")}
+                className="block w-full text-left text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors py-2"
+              >
+                How It Works
+              </button>
               <a
                 href="https://patient.upchaarnepal.com/find/doctors"
                 target="_blank"
@@ -113,6 +131,12 @@ export function Header() {
               >
                 Find Doctors
               </a>
+              <button
+                onClick={() => scrollToSection("technology")}
+                className="block w-full text-left text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors py-2"
+              >
+                Technology
+              </button>
               <Link
                 href="/about"
                 className="block text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors py-2"
@@ -126,20 +150,6 @@ export function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Careers
-              </Link>
-              <Link
-                href="/news-media"
-                className="block text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                News & Media
-              </Link>
-              <Link
-                href="/contact-sales"
-                className="block text-sm font-medium text-gray-700 hover:text-[#059669] transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact Sales
               </Link>
               <button
                 onClick={() => scrollToSection("contact")}

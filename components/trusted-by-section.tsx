@@ -1,4 +1,4 @@
-import { Shield, Award, Lock, Star } from "lucide-react"
+import { Shield, Award, Lock } from "lucide-react"
 
 export function TrustedBySection() {
   const trustIndicators = [
@@ -20,12 +20,6 @@ export function TrustedBySection() {
       color: "text-purple-500",
       bgColor: "bg-purple-50",
     },
-    {
-      icon: Star,
-      title: "FDA Approved",
-      color: "text-yellow-500",
-      bgColor: "bg-yellow-50",
-    },
   ]
 
   return (
@@ -37,7 +31,7 @@ export function TrustedBySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto">
           {trustIndicators.map((indicator, index) => {
             const Icon = indicator.icon
             return (

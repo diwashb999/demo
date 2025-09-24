@@ -1,6 +1,6 @@
 import { HeroSection } from "@/components/hero-section"
 import { TrustedBySection } from "@/components/trusted-by-section"
-import { ServicesSection } from "@/components/services-section"
+import { StakeholderSection } from "@/components/stakeholder-section"
 import { FeaturesSection } from "@/components/features-section"
 import { HowItWorksSection } from "@/components/how-it-works-section"
 import { AllInOneSection } from "@/components/all-in-one-section"
@@ -15,9 +15,7 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       <TrustedBySection />
-      <div id="services">
-        <ServicesSection />
-      </div>
+      <StakeholderSection />
       <FeaturesSection />
       <div id="how-it-works">
         <HowItWorksSection />
